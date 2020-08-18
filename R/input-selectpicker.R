@@ -236,7 +236,7 @@ pickerSelectOptions <- function(choices, selected = NULL, choicesOpt = NULL, max
   }
   if (is.null(choicesOpt))
     choicesOpt <- list()
-  l <- sapply(choices, length)
+  l <- lengths(choices)#sapply(choices, length)
   if (!is.null(maxOptGroup))
     maxOptGroup <- rep_len(x = maxOptGroup, length.out = sum(l))
   m <- matrix(data = c(c(1, cumsum(l)[-length(l)] + 1), cumsum(l)), ncol = 2)
